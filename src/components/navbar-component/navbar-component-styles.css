@@ -1,0 +1,11 @@
+.link-container {
+  display: flex;
+  margin-top: 25px;
+  flex-direction: column;
+}
+
+.link {
+  margin-top: 10px;
+  font-size: small;
+  width: 150px;
+}

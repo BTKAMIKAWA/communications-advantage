@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import Landing from './pages/landing/landing';
+import Navbar from './components/navbar-component/navbar-component';
+import Header from './components/header-component/header-component';
+import './index.css';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <Header />
+      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<div className='main-container'><Navbar /><Landing /></div>} />
+          <Route path='/login' element={<div>Login</div>} />
+          <Route path='/services' element={<div className='main-container'><Navbar />Services</div>} />
+          <Route path='/publications' element={<div className='main-container'><Navbar />Publications</div>} />
+          <Route path='/knowledgebase' element={<div className='main-container'><Navbar />Knowledgebase</div>} />
+          <Route path='/contact' element={<div className='main-container'><Navbar />Contact</div>} />
+          <Route path='*' element={<h1>ERROR</h1>} />
+        </Routes>
+      </BrowserRouter>
     </div>
+    
   );
 }
 
